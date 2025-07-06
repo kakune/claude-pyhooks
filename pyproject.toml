@@ -1,0 +1,23 @@
+[project]
+name = "claude-pyhooks"
+version = "0.1.0"
+description = "A lightweight framework for implementing Claude Code hooks in Python."
+readme = "README.md"
+authors = [
+    { name = "kakune", email = "kak.r.1729@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "mypy>=1.16.1",
+    "pytest>=8.4.1",
+    "ruff>=0.12.2",
+]
