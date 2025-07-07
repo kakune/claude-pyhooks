@@ -56,7 +56,10 @@ class HookOutput(Command, DictElement):
         This is the primary method hooks should call to send their response.
         """
         self._pre_execute()
-        print(self.to_json())
+        output_file = sys.stdout
+        if self._exit_code == 2:
+            output_file = sys.stderr
+        print(self.to_json(), file=output_file)
         if self._exit_code is not None:
             sys.exit(self._exit_code)
 
